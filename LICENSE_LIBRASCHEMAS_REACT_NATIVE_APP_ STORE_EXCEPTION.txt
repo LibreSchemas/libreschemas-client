@@ -1,0 +1,5 @@
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+
+This LibreSchemas Client Exception is an additional permission under section 7 of the GNU Affero General Public License, version 3 ("AGPLv3"). It applies to a given file that bears a notice placed by the copyright holder of the file stating that the file is governed by AGPLv3 or later versions ("AGPLv3+") along with this Exception.
+
+The purpose of LibreSchemas Client is to allow distribution of the software through an app store, even if that store has restrictive terms and conditions that are incompatible with the AGPLv3+, provided that the source is also available under the AGPLv3+ with or without this permission through a channel without those restrictive terms and conditions.
