@@ -1,10 +1,4 @@
-
-Sources.
-Software
-Free and Open source software used is listed in package.json
-
-Images
-These images were sourced from other free and open source projects:
+All images were contributed to this project with the exception of the below being from other free and open source projects:
 
 Images Filename                           Source
 ============================================================================================
