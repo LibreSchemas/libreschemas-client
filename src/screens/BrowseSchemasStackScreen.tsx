@@ -14,6 +14,7 @@ import SchemeEventsScreen from "./SchemeEventsScreen";
 import ChallengesScreen from "./ChallengesScreen";
 import ResolutionsScreen from "./ResolutionsScreen";
 import SchemaEventTabScreen from "./SchemaEventTabScreen";
+import AdjustmentsScreen from "./AdjustmentsScreen";
 
 const ScreenContainer = ({ children }) => (
     <View style={styles.container}>{children}</View>
@@ -29,6 +30,7 @@ const BrowseSchemasStackScreen = ({navigation, route}) => (
     <BrowseSchemasStack.Screen name="Challenges" component={ChallengesScreen} options={{ headerShown: false }}/>
     <BrowseSchemasStack.Screen name="Schema Event" component={SchemaEventTabScreen} options={{ headerShown: false }}/>
     <BrowseSchemasStack.Screen name="Resolutions" component={ResolutionsScreen} options={{ headerShown: false }}/>
+    <BrowseSchemasStack.Screen name="Adjustments" component={AdjustmentsScreen} options={{ headerShown: false }}/>
   </BrowseSchemasStack.Navigator>
 );
 

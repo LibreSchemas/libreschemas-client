@@ -65,6 +65,7 @@ const SchemeEventsScreen = ({navigation, route }) => {
                   rank
                   behaviours_available
                   challenges_available
+                  adjustments_available
                 }
               }
             }
@@ -84,6 +85,7 @@ const SchemeEventsScreen = ({navigation, route }) => {
               rank
               behaviours_available
               challenges_available
+              adjustments_available
             }
           }
         }
@@ -113,7 +115,7 @@ const SchemeEventsScreen = ({navigation, route }) => {
       }
       
   
-      const Item = ({ rank, event_name, event_image_url, challenges_available, behaviours_available }) => (
+      const Item = ({ rank, event_name, event_image_url, challenges_available, behaviours_available, adjustments_available }) => (
           <View style={styles.item}>
             <View style={{ flexDirection: "row"}}>
               <Image style={{ height: 180, width: 240 }} resizeMode='contain' aspectRatio={1.33} source={{ uri: `${event_image_url}` }}/>
@@ -154,6 +156,24 @@ const SchemeEventsScreen = ({navigation, route }) => {
                         })}}>
                     <Text style={{fontSize: 10}}>Challenges</Text>
                 </Button> : null }
+                { (adjustments_available) ? <Button style={{marginTop: 10}}
+                    mode="contained"
+                    uppercase={false}
+                    color={colors.eventbutton}
+                    icon={({ size, color }) => (
+                      <Image
+                        source={require('../assets/images/adjustments.png')}
+                        style={{ width: 32, height: 32 }}
+                      />
+                    )}
+                    onPress={() => {
+                      navigation.navigate('Adjustments', {
+                            docID: (docID) ? docID : data.getSchemasByShortUUID[0].id,
+                            event_name: event_name,
+                            classType: classType
+                        })}}>
+                    <Text style={{fontSize: 10}}>Adjustments</Text>
+                </Button> : null }
               </View>
             </View>
             <View style={{ flexDirection: "row"}}>
@@ -174,7 +194,7 @@ const SchemeEventsScreen = ({navigation, route }) => {
       );
     
       const renderItem = ({ item }) => (
-        <Item rank={ item.rank } event_name={ item.event_name } event_image_url={ item.event_image_url } behaviours_available={ item.behaviours_available } challenges_available={ item.challenges_available } />
+        <Item rank={ item.rank } event_name={ item.event_name } event_image_url={ item.event_image_url } behaviours_available={ item.behaviours_available } challenges_available={ item.challenges_available } adjustments_available={ item.adjustments_available} />
       );
 
       const _goBack = () => navigation.navigate({ name: 'Schemas', params: { classType: 'generic', category: (docID) ? data.getSchema.category : data.getSchemasByShortUUID[0].category} });
@@ -206,5 +226,7 @@ const SchemeEventsScreen = ({navigation, route }) => {
 
     return (query);
 };
+
+
   
 export default SchemeEventsScreen;
